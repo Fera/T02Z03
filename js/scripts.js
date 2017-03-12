@@ -5,7 +5,7 @@ function feedback(url, success, error) {
 	xhr.open("GET", url, true);
 	
 	xhr.onreadystatechange = function (e) {
-        if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        if(this.readyState === 4 && this.status === 200) {
             return (success)(e);
         }
         else {
